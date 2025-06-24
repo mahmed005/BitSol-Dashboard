@@ -15,7 +15,7 @@ export default function LeftSection(): React.ReactNode {
             backgroundImage: `url(${bgPic})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '100dvh',
+            minHeight: '100dvh',
             justifyContent: 'center',
             alignItems: 'center'
         }}>

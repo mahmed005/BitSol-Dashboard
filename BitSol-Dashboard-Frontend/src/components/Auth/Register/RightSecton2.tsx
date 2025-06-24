@@ -1,8 +1,9 @@
 import { Button, Grid, Stack, Typography, Box } from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import Form2 from "./Form2";
 
-export default function RightSection() {
-    return <Grid size={{ xs: 12, md: 7 }} p={6}>
+export default function RightSection2() {
+    return <Grid size={{ xs: 12, md: 7 }} p={{xs: 2, md: 6}}>
         <Stack spacing={10}>
             <Stack width={'100%'} justifyContent={'space-between'} direction={'row'} px={0}>
                 <Button sx={{
@@ -16,7 +17,7 @@ export default function RightSection() {
                         fontWeight: '500',
                         color: '#BDBDBD'
                     }} >
-                        STEP 01/03
+                        STEP 02/03
                     </Typography>
                     <Typography sx={{
                         fontSize: '1rem',
@@ -24,16 +25,16 @@ export default function RightSection() {
                         fontWeight: '600',
                         color: '#8692A6'
                     }}>
-                        Personal Info.
+                        Residency Info.
                     </Typography>
                 </Box>
 
             </Stack>
-            <Stack spacing={'1rem'} maxWidth={{ sm: '80%', xs: '90%' }} pl={{ xs: 2, sm: 8 }}>
+            <Stack spacing={'1rem'} maxWidth={{ sm: '80%', xs: '95%' }} pl={{ xs: 2, sm: 8 }}>
                 <Typography sx={{
                     fontWeight: '700',
                     fontSize: '1.875rem'
-                }} variant="h2">Register Individual Account!</Typography>
+                }} variant="h2">Complete Your Profile!</Typography>
                 <Typography variant="body2" sx={{
                     color: '#8692A6',
                     fontSize: '1.125rem',
@@ -41,6 +42,7 @@ export default function RightSection() {
                 }}>
                     For the purpose of industry regulation, your details are required.
                 </Typography>
+                <Form2 />
             </Stack>
         </Stack>
     </Grid>
