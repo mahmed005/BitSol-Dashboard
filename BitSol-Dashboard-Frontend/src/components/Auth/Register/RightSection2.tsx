@@ -1,17 +1,18 @@
 import { Button, Grid, Stack, Typography, Box } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import Form1 from "./Form1";
-import { useNavigate } from "react-router";
+import Form2 from "./Form2";
+import { goBackRegisterPage } from "../../../utils/utilityFunctions";
+import { useSearchParams } from "react-router";
 import type { RegistrationData } from "./MainPage";
 
-export default function RightSection1({
+export default function RightSection2({
   setRegistrationData,
 }: {
   setRegistrationData: React.Dispatch<
     React.SetStateAction<Partial<RegistrationData>>
   >;
 }) {
-  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <Grid size={{ xs: 12, md: 7 }} p={{ xs: 2, md: 6 }}>
       <Stack spacing={10}>
@@ -23,7 +24,7 @@ export default function RightSection1({
         >
           <Button
             onClick={() => {
-              navigate("/join-us");
+              goBackRegisterPage(searchParams, setSearchParams);
             }}
             sx={{
               color: "#8692A6",
@@ -48,7 +49,7 @@ export default function RightSection1({
                 color: "#BDBDBD",
               }}
             >
-              STEP 01/03
+              STEP 02/03
             </Typography>
             <Typography
               sx={{
@@ -58,7 +59,7 @@ export default function RightSection1({
                 color: "#8692A6",
               }}
             >
-              Personal Info.
+              Residency Info.
             </Typography>
           </Box>
         </Stack>
@@ -74,7 +75,7 @@ export default function RightSection1({
             }}
             variant="h2"
           >
-            Register Individual Account!
+            Complete Your Profile!
           </Typography>
           <Typography
             variant="body2"
@@ -86,7 +87,7 @@ export default function RightSection1({
           >
             For the purpose of industry regulation, your details are required.
           </Typography>
-          <Form1 setRegistrationData={setRegistrationData} />
+          <Form2 setRegistrationData={setRegistrationData} />
         </Stack>
       </Stack>
     </Grid>

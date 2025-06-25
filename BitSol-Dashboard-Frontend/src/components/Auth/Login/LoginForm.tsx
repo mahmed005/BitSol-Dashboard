@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   FormControl,
-  FormControlLabel,
   InputAdornment,
   InputBase,
   InputLabel,
@@ -11,17 +10,13 @@ import {
   Typography,
 } from "@mui/material";
 import { Controller, useForm, type SubmitHandler } from "react-hook-form";
-import Checkbox from "@mui/material/Checkbox";
 import googleLogo from "../../../assets/google_logo.svg";
 import { useState } from "react";
-import type { RegistrationData } from "./MainPage";
-import { useSearchParams } from "react-router";
+import { useNavigate } from "react-router";
 
-export type FormInputs = {
-  fullName: string;
+type FormInputs = {
   email: string;
   password: string;
-  agreement: boolean;
 };
 
 const CustomInput = styled(InputBase)(({ theme }) => ({
@@ -54,39 +49,29 @@ const CustomInput = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Form1({
-  setRegistrationData,
-}: {
-  setRegistrationData: React.Dispatch<
-    React.SetStateAction<Partial<RegistrationData>>
-  >;
-}) {
+export default function LoginForm() {
   const [passwordShow, setPasswordShow] = useState(false);
-  const [, setSearchParams] = useSearchParams();
   const { control, handleSubmit } = useForm<FormInputs>({
     defaultValues: {
-      fullName: "",
       email: "",
       password: "",
-      agreement: true,
     },
   });
+  const navigate = useNavigate();
+
+  function handleForgotPasswordClick() {
+    navigate("/auth?mode=forgot-password");
+  }
 
   function handleToggleShowClick() {
     setPasswordShow((prevState) => !prevState);
   }
 
-  const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    console.log(data);
-    setRegistrationData((prev) => ({
-      ...prev,
-      ...data,
-    }));
-    setSearchParams((prev) => {
-      prev.set("step", "2");
-      return prev;
-    });
-  };
+  function handleSignUpClick() {
+    navigate("/join-us");
+  }
+
+  const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data);
 
   return (
     <Box
@@ -100,34 +85,16 @@ export default function Form1({
       component={"form"}
     >
       <Controller
-        name="fullName"
-        control={control}
-        rules={{ required: true }}
-        render={({ field }) => (
-          <FormControl fullWidth variant="standard">
-            <InputLabel shrink htmlFor="fullname-input">
-              Your fullname*
-            </InputLabel>
-            <CustomInput
-              placeholder="Enter your full name"
-              {...field}
-              id="fullname-input"
-            />
-          </FormControl>
-        )}
-      />
-      <Controller
         name="email"
-        rules={{ required: true }}
         control={control}
+        rules={{ required: true }}
         render={({ field }) => (
           <FormControl fullWidth variant="standard">
             <InputLabel shrink htmlFor="email-input">
-              Email address*
+              Email
             </InputLabel>
             <CustomInput
-              type="email"
-              placeholder="Enter email address"
+              placeholder="Enter email"
               {...field}
               id="email-input"
             />
@@ -136,7 +103,7 @@ export default function Form1({
       />
       <Controller
         name="password"
-        rules={{ required: true, minLength: 8 }}
+        rules={{ required: true }}
         control={control}
         render={({ field }) => (
           <FormControl fullWidth variant="standard">
@@ -168,25 +135,18 @@ export default function Form1({
           </FormControl>
         )}
       />
-      <Controller
-        rules={{ required: true }}
-        control={control}
-        name="agreement"
-        render={({ field }) => (
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={field.value}
-                onChange={field.onChange}
-                inputProps={{ "aria-label": "controlled" }}
-              />
-            }
-            label="I agree to terms & conditions"
-          />
-        )}
-      />
+      <Button
+        onClick={handleForgotPasswordClick}
+        sx={{
+          color: "primary.main",
+          alignSelf: "flex-end",
+        }}
+        variant="text"
+      >
+        Forgot Password
+      </Button>
       <Button variant="contained" size="large" onClick={handleSubmit(onSubmit)}>
-        Register Account
+        Login
       </Button>
       <Typography
         sx={{
@@ -205,9 +165,26 @@ export default function Form1({
       >
         <Box component={"img"} src={googleLogo} />
         <Box color={"black"} component={"span"}>
-          Register with Google
+          Login with Google
         </Box>
       </Button>
+      <Box
+        alignSelf={"center"}
+        display={"flex"}
+        alignItems={"center"}
+        gap={"0.25rem"}
+      >
+        <Typography variant="body2">Don't have an account?</Typography>
+        <Button
+          onClick={handleSignUpClick}
+          sx={{
+            color: "primary.main",
+          }}
+          variant="text"
+        >
+          Sign Up
+        </Button>
+      </Box>
     </Box>
   );
 }

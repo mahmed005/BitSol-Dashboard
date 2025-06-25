@@ -1,5 +1,6 @@
 import { createTheme, ThemeProvider } from "@mui/material";
-import MainPage from "./components/Auth/Register/MainPage";
+import { RouterProvider } from "react-router";
+import routes from "./routes/routes";
 
 const theme = createTheme({
   typography: {
@@ -24,6 +25,6 @@ const theme = createTheme({
 
 export default function App() {
   return <ThemeProvider theme={theme}>
-    <MainPage />
+    <RouterProvider router={routes} />
   </ThemeProvider>
 };

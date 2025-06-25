@@ -3,8 +3,10 @@ import LeftSection from "../LeftSection";
 import RightSection from "./RightSection";
 
 export default function MainPage() {
-    return <Grid container>
-        <LeftSection />
-        <RightSection />
+  return (
+    <Grid container>
+      <LeftSection />
+      <RightSection />
     </Grid>
-};
+  );
+}
