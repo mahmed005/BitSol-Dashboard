@@ -1,7 +1,6 @@
 import { Drawer, Stack } from "@mui/material";
 import NavbarList from "./NavbarList";
 import Profile from "./Profile";
-import Navbar from "./Navbar";
 
 export default function CustomDrawer({
   open,
