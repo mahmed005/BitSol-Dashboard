@@ -4,6 +4,7 @@ import RegisterMainPage from "../components/Auth/Register/MainPage";
 import AuthMainPage from "../components/Auth/Login/MainPage";
 import SettingsRoutePage from "../pages/SettingsRoutePage";
 import GeneralPage from "../pages/GeneralPage";
+import SecurityPage from '../pages/SecurityPage';
 
 const routes = createBrowserRouter([
   { path: "/join-us", element: <JoinUsPage /> },
@@ -17,6 +18,10 @@ const routes = createBrowserRouter([
         index: true,
         element: <GeneralPage />,
       },
+      {
+        path: 'security',
+        element: <SecurityPage />
+      }
     ],
   },
 ]);

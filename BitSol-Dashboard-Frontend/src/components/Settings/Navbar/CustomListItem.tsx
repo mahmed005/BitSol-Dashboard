@@ -1,5 +1,10 @@
-import { ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { Link } from "react-router";
+import {
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
+import { Link, useLocation } from "react-router";
 
 interface ListItemProps {
   icon?: React.ReactElement<unknown>;
@@ -9,7 +14,7 @@ interface ListItemProps {
 
 export default function CustomListItem(props: ListItemProps) {
   const { icon, primary, to } = props;
-  const pathName = window.location.pathname;
+  const pathName = useLocation().pathname;
   const classes =
     pathName === to
       ? {
@@ -24,7 +29,6 @@ export default function CustomListItem(props: ListItemProps) {
       sx={{
         ...classes,
         padding: "0",
-        minWidth: "12rem",
         "& .link": {
           flexBasis: "100%",
           flexShrink: "1",

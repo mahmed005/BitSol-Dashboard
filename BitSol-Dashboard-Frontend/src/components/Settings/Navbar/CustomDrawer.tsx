@@ -1,6 +1,6 @@
 import { Drawer, Stack } from "@mui/material";
 import NavbarList from "./NavbarList";
-import Profile from "./Profile";
+import CustomProfileShower from "./CustomProfileShower";
 
 export default function CustomDrawer({
   open,
@@ -21,7 +21,7 @@ export default function CustomDrawer({
       onClose={onClose}
     >
       <Stack px={3} py={4} spacing={4}>
-        <Profile />
+        <CustomProfileShower />
         <NavbarList />
       </Stack>
     </Drawer>

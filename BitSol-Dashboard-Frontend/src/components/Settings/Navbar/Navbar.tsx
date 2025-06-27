@@ -1,9 +1,9 @@
 import { IconButton, Stack, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Profile from "./Profile";
 import NavbarList from "./NavbarList";
 import { useState } from "react";
 import CustomDrawer from "./CustomDrawer";
+import CustomProfileShower from "./CustomProfileShower";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -38,8 +38,9 @@ export default function Navbar() {
         direction={"column"}
         px={3}
         py={8}
+        minWidth={"12rem"}
       >
-        <Profile />
+        <CustomProfileShower />
         <NavbarList />
       </Stack>
       <CustomDrawer open={open} onClose={onDrawerClose} />
