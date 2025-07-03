@@ -4,7 +4,10 @@ import RegisterMainPage from "../components/Auth/Register/MainPage";
 import AuthMainPage from "../components/Auth/Login/MainPage";
 import SettingsRoutePage from "../pages/SettingsRoutePage";
 import GeneralPage from "../pages/GeneralPage";
-import SecurityPage from '../pages/SecurityPage';
+import SecurityPage from "../pages/SecurityPage";
+import BillingPage from "../pages/BillingPage";
+import NotificationsPage from "../pages/NotificationsPage";
+import AnalyticsPage from "../pages/AnalyticsPage";
 
 const routes = createBrowserRouter([
   { path: "/join-us", element: <JoinUsPage /> },
@@ -19,9 +22,21 @@ const routes = createBrowserRouter([
         element: <GeneralPage />,
       },
       {
-        path: 'security',
-        element: <SecurityPage />
-      }
+        path: "security",
+        element: <SecurityPage />,
+      },
+      {
+        path: "billing",
+        element: <BillingPage />,
+      },
+      {
+        path: "notifications",
+        element: <NotificationsPage />,
+      },
+      {
+        path: "analytics",
+        element: <AnalyticsPage />,
+      },
     ],
   },
 ]);

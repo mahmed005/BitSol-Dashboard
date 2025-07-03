@@ -29,6 +29,8 @@ const theme = createTheme({
     },
     customGrey: {
       main: "#8692A6",
+      dark: "#62618F",
+      light: "#D5D4F0",
     },
     tertiary: {
       light: "#F572B9",

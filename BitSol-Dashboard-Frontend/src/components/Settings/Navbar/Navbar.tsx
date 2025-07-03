@@ -4,11 +4,16 @@ import NavbarList from "./NavbarList";
 import { useState } from "react";
 import CustomDrawer from "./CustomDrawer";
 import CustomProfileShower from "./CustomProfileShower";
+import { useLocation } from "react-router";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  let subPath = window.location.pathname.split("settings")[1];
-  if (subPath === "") subPath = "General";
+  let subPath = useLocation().pathname.split("settings")[1];
+  if (subPath === "" || subPath === "/") subPath = "General";
+  else subPath = subPath.split("/")[1];
+  subPath = subPath.charAt(0).toUpperCase() + subPath.slice(1);
+  if (subPath[subPath.length - 1] === "/")
+    subPath = subPath.slice(0, subPath.length - 1);
 
   function onDrawerClose() {
     setOpen(false);

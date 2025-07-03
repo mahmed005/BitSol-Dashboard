@@ -16,7 +16,7 @@ export default function CustomListItem(props: ListItemProps) {
   const { icon, primary, to } = props;
   const pathName = useLocation().pathname;
   const classes =
-    pathName === to
+    pathName === to || pathName.slice(0, pathName.length - 1) === to
       ? {
           backgroundColor: "primary.main",
           color: "white",
