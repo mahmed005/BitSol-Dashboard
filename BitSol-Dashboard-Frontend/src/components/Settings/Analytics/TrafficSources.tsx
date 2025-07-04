@@ -33,8 +33,8 @@ export default function TrafficSources() {
       </Stack>
       <Stack direction={"row"}>
         <TrafficSourceDoughnutChart />
-        <Stack spacing={0.5}>
-          <BarChart data={fakeData} />
+        <Stack width={"50%"} spacing={0.5}>
+          <BarChart width={"100%"} data={fakeData} />
           <CustomButton
             text="See more"
             importance="text"

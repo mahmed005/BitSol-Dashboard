@@ -4,10 +4,33 @@ import Masonry from "react-masonry-css";
 import TrafficSources from "../components/Settings/Analytics/TrafficSources";
 import Recycled from "../components/Settings/Analytics/Recycled";
 import Goals from "../components/Settings/Analytics/Goals";
+import { useState } from "react";
+import CustomCard from "../components/Settings/Analytics/CustomCard";
+import LineChart from "../components/Settings/Analytics/LineChart";
+
+const cards = [
+  {
+    key: "Impressions",
+    value: 383,
+  },
+  {
+    key: "Click-through rate",
+    value: "9.1%",
+  },
+  {
+    key: "Views",
+    value: 97,
+  },
+  {
+    key: "Unique Viewers",
+    value: 54,
+  },
+];
 
 export default function AnalyticsPage() {
+  const [active, setActive] = useState(0);
   return (
-    <Stack marginTop={4} width={"100%"}>
+    <Stack marginTop={4} spacing={3} width={"100%"}>
       <Masonry
         breakpointCols={2}
         className="my-masonry-grid"
@@ -29,6 +52,19 @@ export default function AnalyticsPage() {
           dimension={5}
         />
       </Masonry>
+      <Stack justifyContent={"center"} gap={"0.5rem"} direction={"row"}>
+        {cards.map((card, index) => (
+          <CustomCard
+            key={index}
+            Key={card.key}
+            value={card.value}
+            isActive={index === active}
+            number={index}
+            setActive={setActive}
+          />
+        ))}
+      </Stack>
+      <LineChart />
     </Stack>
   );
 }

@@ -47,6 +47,7 @@ export default function RecycledChart() {
     <Box width={"50%"}>
       <Doughnut
         options={{
+          animation: false,
           radius: "100%",
           cutout: "80%",
         }}

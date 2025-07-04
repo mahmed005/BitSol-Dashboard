@@ -41,11 +41,13 @@ const customLabelPlugin = {
 
 export default function BarChart({
   data,
+  width,
 }: {
   data: {
     labels: string[];
     datasets: Array<{ data: number[]; backgroundColor: string[] }>;
   };
+  width: string;
 }) {
   const finalData = JSON.parse(JSON.stringify(data));
 
@@ -56,10 +58,11 @@ export default function BarChart({
   });
 
   return (
-    <Box>
+    <Box width={width}>
       <Bar
-        id="2"
         options={{
+          animation: false,
+          maintainAspectRatio: false,
           indexAxis: "y",
           plugins: {},
           scales: {

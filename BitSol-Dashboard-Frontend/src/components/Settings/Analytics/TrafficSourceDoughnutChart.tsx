@@ -38,14 +38,10 @@ export default function TrafficSourceDoughnutChart() {
   return (
     <Box width={"50%"}>
       <Doughnut
-        id="1"
         options={{
+          animation: false,
           radius: "70%",
           cutout: "75%",
-          animation: {
-            animateScale: true,
-            animateRotate: true,
-          },
         }}
         plugins={[centerTextPlugin]}
         data={fakeData}

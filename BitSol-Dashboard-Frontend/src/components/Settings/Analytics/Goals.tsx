@@ -39,7 +39,7 @@ export default function Goals() {
           <MenuItem value={"month"}>This Month</MenuItem>
         </Select>
       </Stack>
-      <BarChart data={fakeData} />
+      <BarChart width="100%" data={fakeData} />
     </Stack>
   );
 }
