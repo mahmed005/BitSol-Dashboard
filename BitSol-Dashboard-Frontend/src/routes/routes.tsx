@@ -8,11 +8,23 @@ import SecurityPage from "../pages/SecurityPage";
 import BillingPage from "../pages/BillingPage";
 import NotificationsPage from "../pages/NotificationsPage";
 import AnalyticsPage from "../pages/AnalyticsPage";
+import DashboardRootPage from "../pages/DashboardRootPage";
+import DashboardSideLayoutPage from "../pages/DashboardSideLayoutPage";
 
 const routes = createBrowserRouter([
   { path: "/join-us", element: <JoinUsPage /> },
   { path: "register", element: <RegisterMainPage /> },
   { path: "/auth", element: <AuthMainPage /> },
+  {
+    path: "/",
+    element: <DashboardRootPage />,
+    children: [
+      {
+        index: true,
+        element: <DashboardSideLayoutPage />,
+      },
+    ],
+  },
   {
     element: <SettingsRoutePage />,
     path: "/settings",

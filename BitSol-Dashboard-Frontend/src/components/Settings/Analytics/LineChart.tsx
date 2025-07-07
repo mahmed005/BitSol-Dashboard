@@ -18,7 +18,7 @@ ChartJS.register(
 );
 
 const labels = Array.from({ length: 100 }, (_, i) => i * 10); // 0 to 1000
-const data = labels.map((x, i) => {
+const data = labels.map((x) => {
   return Math.min(
     225,
     Math.abs(

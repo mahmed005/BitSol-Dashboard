@@ -7,6 +7,7 @@ import Goals from "../components/Settings/Analytics/Goals";
 import { useState } from "react";
 import CustomCard from "../components/Settings/Analytics/CustomCard";
 import LineChart from "../components/Settings/Analytics/LineChart";
+import Expenses from "../components/Settings/Analytics/Expenses";
 
 const cards = [
   {
@@ -65,6 +66,7 @@ export default function AnalyticsPage() {
         ))}
       </Stack>
       <LineChart />
+      <Expenses />
     </Stack>
   );
 }

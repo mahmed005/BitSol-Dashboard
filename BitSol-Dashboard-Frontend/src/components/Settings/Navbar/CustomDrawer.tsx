@@ -10,16 +10,7 @@ export default function CustomDrawer({
   onClose(): void;
 }) {
   return (
-    <Drawer
-      sx={{
-        display: {
-          xs: "block",
-          sm: "none",
-        },
-      }}
-      open={open}
-      onClose={onClose}
-    >
+    <Drawer open={open} onClose={onClose}>
       <Stack px={3} py={4} spacing={4}>
         <CustomProfileShower />
         <NavbarList />
