@@ -9,7 +9,12 @@ export default function AddButton({
   return (
     <IconButton
       sx={{
+        "&:hover": {
+          backgroundColor: "primary.main",
+        },
         ...classes,
+        color: "white",
+        backgroundColor: "primary.main",
       }}
     >
       <AddIcon />

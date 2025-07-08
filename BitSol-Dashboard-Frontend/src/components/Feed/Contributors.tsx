@@ -15,7 +15,14 @@ export default function Contributors() {
       }}
     >
       <Typography variant="h6">Contributors</Typography>
-      <AvatarGroup max={4}>
+      <AvatarGroup
+        total={10}
+        sx={{
+          alignSelf: "flex-start",
+          "& .MuiAvatar-root": { borderColor: "primary.main" },
+        }}
+        max={5}
+      >
         <Avatar src={pic1} />
         <Avatar src={pic2} />
         <Avatar src={pic3} />

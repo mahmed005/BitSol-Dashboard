@@ -18,6 +18,7 @@ export default function OtherStories({
           position: "absolute",
           top: "10%",
           left: "10%",
+          border: "2px solid white",
         }}
         src={accSrc}
       />

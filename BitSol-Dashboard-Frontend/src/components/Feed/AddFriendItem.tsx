@@ -1,4 +1,4 @@
-import { Card, Typography } from "@mui/material";
+import { Avatar, Card, Typography } from "@mui/material";
 import AddButton from "../UI/AddButton";
 
 export default function AddFriendItem({
@@ -16,22 +16,28 @@ export default function AddFriendItem({
         borderColor: "primary.main",
         display: "flex",
         flexDirection: "column",
-        gap: "0.25rem",
+        gap: "0.2rem",
         paddingX: "0.5rem",
-        paddingY: "0.25rem",
-        paddingBottom: "0.5rem",
+        paddingY: "0.5rem",
+        paddingBottom: "1rem",
         alignItems: "center",
         position: "relative",
+        overflow: "visible",
+        flexGrow: 1,
       }}
     >
-      <img src={imgSrc} alt={name} />
-      <Typography variant="body2">{name}</Typography>
+      <Avatar src={imgSrc} alt={name} />
+      <Typography color="black" variant="body2">
+        {name}
+      </Typography>
       <AddButton
         classes={{
           position: "absolute",
-          top: "100%",
+          top: "90%",
           left: "50%",
           transform: "translate(-50%)",
+          width: "25px",
+          height: "25px",
         }}
       />
     </Card>

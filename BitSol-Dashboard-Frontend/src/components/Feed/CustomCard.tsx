@@ -9,9 +9,9 @@ export default function CustomCard(props: PropsWithChildren<Props>) {
   return (
     <Card
       sx={{
+        padding: "0.5rem",
         ...props.classes,
         backgroundColor: "white",
-        padding: "0.5rem",
         border: 0,
         boxShadow: "none",
       }}

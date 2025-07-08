@@ -10,6 +10,10 @@ export default function Navbar() {
       left={"0"}
       height={"10dvh"}
       width={"100dvw"}
+      zIndex={100}
+      sx={{
+        backgroundColor: "white",
+      }}
     >
       <MobileNav />
       <DesktopNavbar />

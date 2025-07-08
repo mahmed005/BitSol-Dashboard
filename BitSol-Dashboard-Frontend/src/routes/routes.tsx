@@ -10,6 +10,11 @@ import NotificationsPage from "../pages/NotificationsPage";
 import AnalyticsPage from "../pages/AnalyticsPage";
 import DashboardRootPage from "../pages/DashboardRootPage";
 import DashboardSideLayoutPage from "../pages/DashboardSideLayoutPage";
+import FeedPage from "../pages/FeedPage";
+import EventsPage from "../pages/EventsPage";
+import JobsPage from "../pages/JobsPage";
+import ArticlesPage from "../pages/ArticlesPage";
+import PeoplePage from "../pages/PeoplePage";
 
 const routes = createBrowserRouter([
   { path: "/join-us", element: <JoinUsPage /> },
@@ -20,8 +25,30 @@ const routes = createBrowserRouter([
     element: <DashboardRootPage />,
     children: [
       {
-        index: true,
+        path: "",
         element: <DashboardSideLayoutPage />,
+        children: [
+          {
+            index: true,
+            element: <FeedPage />,
+          },
+          {
+            path: "events",
+            element: <EventsPage />,
+          },
+          {
+            path: "jobs",
+            element: <JobsPage />,
+          },
+        ],
+      },
+      {
+        path: "articles",
+        element: <ArticlesPage />,
+      },
+      {
+        path: "people",
+        element: <PeoplePage />,
       },
     ],
   },

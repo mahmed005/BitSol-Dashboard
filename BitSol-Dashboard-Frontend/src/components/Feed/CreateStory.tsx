@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import StoryContainer from "./StoryContainer";
 import AddButton from "../UI/AddButton";
 
@@ -13,14 +13,19 @@ export default function CreateStory({ imgSrc }: { imgSrc: string }) {
         height={"30%"}
         width={"100%"}
         position={"absolute"}
+        sx={{
+          backgroundColor: "white",
+        }}
       >
-        <span>Create Story</span>
+        <Typography fontWeight={600}>Create Story</Typography>
         <AddButton
           classes={{
             position: "absolute",
             top: "-10px",
             left: "50%",
             transform: "translateX(-50%)",
+            width: "25px",
+            height: "25px",
           }}
         />
       </Box>

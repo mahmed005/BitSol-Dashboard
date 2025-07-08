@@ -1,6 +1,25 @@
 import { Stack, Typography } from "@mui/material";
 import CustomCard from "./CustomCard";
 import CustomButton from "../UI/CustomButton";
+import pic1 from "../../assets/pic_1 (1).png";
+import pic2 from "../../assets/pic_1 (2).png";
+import pic3 from "../../assets/pic_1 (3).png";
+import AddFriendItem from "./AddFriendItem";
+
+const suggestions = [
+  {
+    name: "Josh",
+    imgSrc: pic1,
+  },
+  {
+    name: "Christer",
+    imgSrc: pic2,
+  },
+  {
+    name: "Lise",
+    imgSrc: pic3,
+  },
+];
 
 export default function AddFriendsSection() {
   return (
@@ -10,6 +29,9 @@ export default function AddFriendsSection() {
         flexDirection: "column",
         gap: "0.5rem",
         width: "100%",
+        paddingY: "1rem",
+        paddingX: "0.5rem",
+        overflow: "visible",
       }}
     >
       <Stack
@@ -26,7 +48,15 @@ export default function AddFriendsSection() {
           }}
         />
       </Stack>
-      
+      <Stack direction={"row"} justifyContent={"space-evenly"} spacing={0.5}>
+        {suggestions.map((suggestion, index) => (
+          <AddFriendItem
+            name={suggestion.name}
+            imgSrc={suggestion.imgSrc}
+            key={index}
+          />
+        ))}
+      </Stack>
     </CustomCard>
   );
 }
