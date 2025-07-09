@@ -15,6 +15,7 @@ import EventsPage from "../pages/EventsPage";
 import JobsPage from "../pages/JobsPage";
 import ArticlesPage from "../pages/ArticlesPage";
 import PeoplePage from "../pages/PeoplePage";
+import ChatsPage from "../pages/ChatsPage";
 
 const routes = createBrowserRouter([
   { path: "/join-us", element: <JoinUsPage /> },
@@ -51,6 +52,10 @@ const routes = createBrowserRouter([
         element: <PeoplePage />,
       },
     ],
+  },
+  {
+    path: "/chats",
+    element: <ChatsPage />,
   },
   {
     element: <SettingsRoutePage />,

@@ -97,7 +97,7 @@ export default function DashboardSideLayoutPage() {
       padding={"1rem"}
     >
       <Grid container spacing={4}>
-        <Grid size={3}>
+        <Grid display={{ xs: "none", md: "block" }} size={{ xs: 0, md: 3 }}>
           <Stack spacing={3}>
             {displayProfile && <ProfileShower />}
             <AddFriendsSection />
@@ -105,14 +105,14 @@ export default function DashboardSideLayoutPage() {
             {displayEvents && <EventPlanner />}
           </Stack>
         </Grid>
-        <Grid size={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Stack spacing={3}>
             <StoriesList />
             <CreatePost />
             <Outlet />
           </Stack>
         </Grid>
-        <Grid size={3}>
+        <Grid display={{ xs: "none", md: "block" }} size={{ xs: 0, md: 3 }}>
           <Stack spacing={3}>
             <Info items={contacts} heading="Contacts" />
             {displayCompanies && (

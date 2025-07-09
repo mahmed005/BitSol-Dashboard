@@ -38,6 +38,7 @@ export default function Navbar() {
         <Typography variant="h6">{subPath}</Typography>
       </Stack>
       <Stack
+        height={"100dvh"}
         display={{ xs: "none", sm: "flex" }}
         gap={4}
         direction={"column"}
